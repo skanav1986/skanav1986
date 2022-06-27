@@ -1,0 +1,158 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2022-06-27T10:01:31Z"
+  generateName: lcm-tkg-extension-9ff6fbf46-
+  labels:
+    app: lcm-tkg-extension
+    pod-template-hash: 9ff6fbf46
+  name: lcm-tkg-extension-9ff6fbf46-vxcws
+  namespace: vmware-system-tmc
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: lcm-tkg-extension-9ff6fbf46
+    uid: 71f85cb6-9982-4fad-94d7-dcdc55008b20
+  resourceVersion: "107845"
+  uid: 207f40c4-1303-4d1c-99b3-4c3935f4d88f
+spec:
+  containers:
+  - args:
+    - --cluster-concurrency=5
+    env:
+    - name: HTTP_PROXY
+      valueFrom:
+        secretKeyRef:
+          key: HTTP_PROXY
+          name: tmc-proxy-secret
+          optional: true
+    - name: HTTPS_PROXY
+      valueFrom:
+        secretKeyRef:
+          key: HTTPS_PROXY
+          name: tmc-proxy-secret
+          optional: true
+    - name: NO_PROXY
+      valueFrom:
+        secretKeyRef:
+          key: NO_PROXY
+          name: tmc-proxy-secret
+          optional: true
+    - name: PROXY_CA_CERT
+      valueFrom:
+        secretKeyRef:
+          key: tls-root-ca-bundle
+          name: tmc-proxy-secret
+          optional: true
+    - name: TKG_CUSTOM_COMPATIBILITY_IMAGE_PATH
+      value: tkg-compatibility
+    - name: TKG_CUSTOM_IMAGE_REPOSITORY_CA_CERTIFICATE
+      value: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUdCRENDQSt5Z0F3SUJBZ0lVRzV1N2JxRW5OV05vTzJHUEFpQ2NkcllDT2dRd0RRWUpLb1pJaHZjTkFRRU4KQlFBd2RqRUxNQWtHQTFVRUJoTUNRMDR4RURBT0JnTlZCQWdNQjBKbGFXcHBibWN4RURBT0JnTlZCQWNNQjBKbAphV3BwYm1jeEVEQU9CZ05WQkFvTUIyVjRZVzF3YkdVeEVUQVBCZ05WQkFzTUNGQmxjbk52Ym1Gc01SNHdIQVlEClZRUUREQlZvWVhKaWIzSm1iM0owWW5NdWRHVnpkQzVqYjIwd0hoY05Nakl3TmpBek1UTXdNRFV5V2hjTk16SXcKTlRNeE1UTXdNRFV5V2pCNE1Rc3dDUVlEVlFRR0V3SkRUakVRTUE0R0ExVUVDQXdIUW1WcGFtbHVaekVRTUE0RwpBMVVFQnd3SFFtVnBhbWx1WnpFUU1BNEdBMVVFQ2d3SFpYaGhiWEJzWlRFUk1BOEdBMVVFQ3d3SVVHVnljMjl1CllXd3hJREFlQmdOVkJBTU1GeUJvWVhKaWIzSm1iM0owWW5NdWRHVnpkQzVqYjIwZ01JSUNJakFOQmdrcWhraUcKOXcwQkFRRUZBQU9DQWc4QU1JSUNDZ0tDQWdFQW9IT2dDdWJydklEdkluV1VCbmo0WW5LeEVSaW8rcGRxcnNuQgpmUmZ4aGU2b1BuWENOcVFSWERMU3AxQkp2YnpXU0w0QUdNMFJSa0xpZjJmRUttS3E0NWlsODlnWE9Pb1cxZHl0ClQrK3ljTGlsU3ZCS2FCbVA4WXlXZytiek8wU2VjUll2VFV2QWIzZ1FzdWJOUExycnRnZWN5Q0RHVDk1NGE5UHkKZndXL0J3Q24zbVJyc1pldDNwckFVWU83TDVkeHBZZ2c3QnhRbmFUbVpEQytJUkRkekN5WVhwU1RiWnBYMWRYUQpTN2pmZ3U0d1k4eks0U0NTQUdyVXlWVmZpSFVBOHI5Y0xZMVk0YU5KK3NldVo5U1FVTENQdHo3by9sYkkyV2I0Cm0zRGx5bzZZQXhYZ2w2MzZjNVZqSHI1eUtGdmg5ZGNOZTdpb3hIcHh5YUJHeER1NFViWWFRaUU5eXVUYjdsTzIKWHJVSjNwNmR2WVJDL2JCYXZwVTUrQzZXZWFvcUU5VG4yT1hBQ3lFY1RjQXpybTNjZnRsSVNUemNHZkZmZkNrZQpaZVhHOVRpNERoUndmakZ5VWRJTHNJalRkNEVvY1FJVCs1OUt6MDcyVXMxZGlTLys2aXpBV0ozRmdNMkY4MEVUCksxcGVnU280dmo2QjRDVGVWTkpDK1hNUFZyYzdxOTdTTEhiZUp6VnRSN3c4QUQxRVNOYklzZC9paDFtL0lHc2QKTFBmcGVzRlM3RG9Ua3FPRVBlTGxId2VueGRNTmJFQXJBRHJsb0pUZFJtVHFxdFEyZFI5RzBjQUhSNjBCTjlkTApUYnRWYjRFRlpaWHJBR1VzVXVCL3I3UW5FQkhlN1d0all1eklZcnVSbW1lTjFzTlpZdURldU81WG8zNG9DeHkyCmpWdnhTMzBDQXdFQUFhT0JoekNCaERBZkJnTlZIU01FR0RBV2dCUVRpdURxeEJqMEZqaytnY3JTbkwvdm5memUKc3pBSkJnTlZIUk1FQWpBQU1Bc0dBMVVkRHdRRUF3SUU4REFUQmdOVkhTVUVEREFLQmdnckJnRUZCUWNEQVRBMApCZ05WSFJFRUxUQXJnaFZvWVhKaWIzSm1iM0owWW5NdWRHVnpkQzVqYjIyQ0RHaGhjbUp2Y21admNuUmljNGNFCkNsb01SVEFOQmdrcWhraUc5dzBCQVEwRkFBT0NBZ0VBWHQzc1BBL2ZyVDVJYXJTSTlYbk4rdjNndmFiZ0VrMlAKQVJPVzNHMHR1anE0Ujl0L2pQbU8waTRmRmhUQ0plS0lHOHpwaUFWajBFL1kwN0wwTEwrNHZKRWE4UW5TdE5BMgpjcnVkNmxMaW5USDArREZDdUY4REsySDUyNHZyUW1zRmtoZzZweCtHeXE4RlNHQ1FFamsvdUZYcTgxR1RMczNNCmJLcC9IamJrbGtBYTYzTjNjOTZVN1F2MEJjRExzdXVVS0lUbW5hK09QcUZ5Tkl5T3NmU2ZXNktGWmdPQ29qY3cKQmgwZ0tiWkkrb3pPN3VrT0IzSmlUS3NNRHdMNTVYVEVqNnI1cFlzQWJWNnVnK29kNDBOZ2xvMXFMa3ZITEUzdQpPa1c4RGErVTMvcHdyYmUxTTlKNUM4OWY5Tm12eFVGbE1jKzVFb3JLR21CS2xDakJrQURLV3RDR3pzd1ZscXlPCkJ6QXRJWGhObFNkeUVBcFVmcDAxdGd4NmdEZUJod1hMQ0tHQTFkdXV1TE1zblhDM2pxWGRZZEdnSmRNRVdYb2QKY211M08vMHFUMmJIOEFtaU1RanFPUlA4NndtNW1mc2hueExKYmoxMEVKKzV1QnM0bGRBRWhPRFV5SGlyOEJsaAowcWxTa3ErbVN2R3hmUHdoWHU5T2JuMmpORms3emt6ZzJjQWd3QVpmMWdublF6aXFpdCt0eDVDeU5TL2ZaN05nCmxVSnlheGM5aWZvL1M0Y2pXUG5rV3RRSDZCUlZYTmRrdUFGN0JOR2lIY1lFajIzeXFFeUYyanR6b1A4c2VSdjkKR3ZIbFQ1WlhVdW16VFV0N0g5Uzd1WDFjd2xpdzhqMmNaNFFGWjRtRjB2c0RoYjkwbm5NUU1FeTRYWFZmdnBmcAo0cGlablA5R2RTaz0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    - name: TKG_CUSTOM_IMAGE_REPOSITORY
+      value: harborfortbs.test.com/offline
+    image: extensions.aws-usw2.tmc-dev.cloud.vmware.com/extensions/lcm-tkg-extension@sha256:d68b190a312302adf4b443c94f5f4e7f8b81b0a553cc09f6e109ec0c339a7cc9
+    imagePullPolicy: Always
+    name: manager
+    resources:
+      limits:
+        cpu: 200m
+        memory: 512Mi
+      requests:
+        cpu: "0"
+        memory: 64Mi
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /etc/tkg
+      name: tkg
+    - mountPath: /tmp
+      name: tmp
+    - mountPath: /home
+      name: home
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-nmr5s
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: offline-mgmt-md-0-866d7d789f-l5jp2
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: lcm-tkg-extension
+  serviceAccountName: lcm-tkg-extension
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - emptyDir: {}
+    name: tkg
+  - emptyDir: {}
+    name: tmp
+  - emptyDir: {}
+    name: home
+  - name: kube-api-access-nmr5s
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2022-06-27T10:01:31Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2022-06-27T10:01:35Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2022-06-27T10:01:35Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2022-06-27T10:01:31Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://8555e10e1062dc50756734b246d0fcba9882f201098be59a7fd78c4bea22eb3b
+    image: sha256:63babde3265fd2ccaaf920d6ec53520d4f772f83c06c1a00248d52716fdc351c
+    imageID: extensions.aws-usw2.tmc-dev.cloud.vmware.com/extensions/lcm-tkg-extension@sha256:d68b190a312302adf4b443c94f5f4e7f8b81b0a553cc09f6e109ec0c339a7cc9
+    lastState: {}
+    name: manager
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2022-06-27T10:01:35Z"
+  hostIP: 192.168.1.235
+  phase: Running
+  podIP: 100.96.1.69
+  podIPs:
+  - ip: 100.96.1.69
+  qosClass: Burstable
+  startTime: "2022-06-27T10:01:31Z"
